@@ -19,6 +19,19 @@ struct Node {
 struct LinkedList {
 	Node* head = nullptr;
 
+	// Create an empty list by default
+	LinkedList() = default;
+
+	// Create a list with a head
+	LinkedList(int value) {
+		head = new Node(value);
+	}
+
+	// Destroy the list
+	~LinkedList() {
+		delete head;
+	}
+
 	// Add a new node to the end of the linked list
 	void PushBack(int value){
 		Node* tail = new Node(value);
