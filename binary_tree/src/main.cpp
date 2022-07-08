@@ -36,10 +36,26 @@ struct BinaryTree {
             root = new Node(value);
             return;
         }
+
+        if (root->left == nullptr && root->right == nullptr) {
+            if (root->data < value) {
+                root->left = new Node(value);
+                return;
+            } else if (root->data > value) {
+                // what about if it's equal?
+                root->right = new Node(value);
+                return;
+            }
+        } else {
+            Node* current = root;
+
+        }
     }
 
     Node* Search(int value){
         // todo: implement
+        Node* res = nullptr;
+        return res;
     }
 
     BinaryTree() = default;
